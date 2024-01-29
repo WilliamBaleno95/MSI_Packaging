@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product 
+		Id="*" 
+		Name="MSIPackaging" 
+		Language="1033" 
+		Version="1.0.0.0" 
+		Manufacturer="" 
+		UpgradeCode="25e89380-3df4-441a-8d49-6814637e8cee">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate />
+		
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder" Name="PFiles">
+				<Directory Id="INSTALLDIR" Name="TexStudioMSI 1.0">
+					<Directory Id="tlsfolder" Name="tls">
+						<Component Id="MainQopensslbackendDll" Guid="{4360F861-F7B7-47CF-BBF8-32F0AAB30648}">
+							<File  Id="FileQopenssbackendDll" Name="qopensslbackend.dll" DiskId="1" Source="C:\Users\William Baleno\Documents\TexStudioMsi\tls\qopensslbackend.dll" KeyPath="yes"/>
+						</Component>
+					</Directory>
+				
+					<Component Id="MainQt6WidgetsDll" Guid="{BDABC26B-22B3-4DBA-8DC7-83E56F576559}"	>
+						<File Id="FileQt6WidgetsDll" Name="Qt6Widgets.dll" DiskId="1" Source="C:\Users\William Baleno\Documents\TexStudioMsi\Qt6Widgets.dll" KeyPath="yes" />
+					</Component>
+					
+					<Component Id="MainQt6XmlDll" Guid="{82671416-1743-475F-9E25-DB883B24B7DF}">
+						<File Id="FileQt6XmlDll" Name="Qt6Xml.dll" DiskId="1" Source="C:\Users\William Baleno\Documents\TexStudioMsi\Qt6Xml.dll" KeyPath="yes"/>
+					</Component>
+					
+					<Component Id="MainSmime3Dll" Guid="{8DBC02D6-6035-42AD-8431-81A89BEDFDFA}">
+						<File Id="FileSmain3Dll" Name="smime.dll" DiskId="1" Source="C:\Users\William Baleno\Documents\TexStudioMsi\smime3.dll" KeyPath="yes"></File>
+					</Component>
+					
+					<Component Id="MainExecutable" Guid="{8B1B981F-2B64-4078-8502-9D74D8AFC739}">
+						<File Id="FileTexStudioExe" Name="texstudio.exe" DiskId="1" Source="C:\Users\William Baleno\Documents\TexStudioMsi\texstudio.exe" KeyPath="yes">
+							<Shortcut Id="texstudioexecute" Name="TexStudioExe" Directory="ProgramMenuDir" WorkingDirectory="INSTALLDIR" Advertise="yes" />
+							<Shortcut Id="desktoptexstudio" Name="TexStudioExe" Directory="DesktopFolder" WorkingDirectory="INSTALLDIR" Advertise="yes"/>
+						</File>
+					</Component>
+		
+		
+				</Directory>
+			</Directory>
+		
+			<Directory Id="ProgramMenuFolder" Name="Programs">
+				<Directory Id="ProgramMenuDir" Name="TexStudioMSI 1.0">
+					<Component Id="ProgramMenuDir" Guid="{A290A2F4-A2AB-49E2-B786-DC1230CF3791}">
+						<RemoveFolder Id="ProgramMenuDir" On="uninstall"/>
+						<RegistryValue Root="HKCU" Key="software\[Manufacturer]\[ProductName]" Type="string" Value="" KeyPath="yes" />
+					</Component>
+				</Directory>
+			</Directory>
+			
+			<Directory Id="DesktopFolder" Name="Desktop"/>
+		
+		</Directory>
+		
+		
+
+		<Feature Id="ProductFeature" Title="MSIPackaging" Level="1">
+			<ComponentRef Id="MainQopensslbackendDll" />
+			<ComponentRef Id="MainQt6WidgetsDll"/>
+			<ComponentRef Id="MainQt6XmlDll"/>
+			<ComponentRef Id="MainSmime3Dll"/>
+			<ComponentRef Id="MainExecutable"/>
+			<ComponentRef Id="ProgramMenuDir"/>
+		</Feature>
+	</Product>
+
+	
+</Wix>

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33424.131
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{B7DD6F7E-DEF8-4E67-B5B7-07EF123DB6F0}") = "MSIPackaging", "MSIPackaging.wixproj", "{BB6410D0-EB6A-4A1F-98B8-A684BD2A1E69}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BB6410D0-EB6A-4A1F-98B8-A684BD2A1E69}.Debug|x86.ActiveCfg = Debug|x86
+		{BB6410D0-EB6A-4A1F-98B8-A684BD2A1E69}.Debug|x86.Build.0 = Debug|x86
+		{BB6410D0-EB6A-4A1F-98B8-A684BD2A1E69}.Release|x86.ActiveCfg = Release|x86
+		{BB6410D0-EB6A-4A1F-98B8-A684BD2A1E69}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {65299FD2-6087-4CEC-AA1A-ECD024DAA06A}
+	EndGlobalSection
+EndGlobal
